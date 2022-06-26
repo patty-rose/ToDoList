@@ -1,0 +1,15 @@
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/bin/Debug/net5.0/ToDoList.deps.json
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/bin/Debug/net5.0/ToDoList.dll
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/bin/Debug/net5.0/ref/ToDoList.dll
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/bin/Debug/net5.0/ToDoList.pdb
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/obj/Debug/net5.0/ToDoList.csproj.AssemblyReference.cache
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/obj/Debug/net5.0/ToDoList.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/obj/Debug/net5.0/ToDoList.AssemblyInfoInputs.cache
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/obj/Debug/net5.0/ToDoList.AssemblyInfo.cs
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/obj/Debug/net5.0/ToDoList.csproj.CoreCompileInputs.cache
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/obj/Debug/net5.0/ToDoList.dll
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/obj/Debug/net5.0/ref/ToDoList.dll
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/obj/Debug/net5.0/ToDoList.pdb
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/bin/Debug/net5.0/ToDoList.runtimeconfig.json
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/bin/Debug/net5.0/ToDoList.runtimeconfig.dev.json
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/obj/Debug/net5.0/ToDoList.genruntimeconfig.cache
