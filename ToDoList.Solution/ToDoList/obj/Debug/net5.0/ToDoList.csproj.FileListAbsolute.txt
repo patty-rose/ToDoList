@@ -32,3 +32,4 @@
 /Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs
 /Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/obj/Debug/net5.0/Razor/Views/Items/DeleteAll.cshtml.g.cs
 /Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/obj/Debug/net5.0/Razor/Views/Items/New.cshtml.g.cs
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/obj/Debug/net5.0/Razor/Views/Items/Show.cshtml.g.cs
