@@ -98,3 +98,8 @@
 /Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList.Tests/obj/Debug/net5.0/ref/ToDoList.Tests.dll
 /Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList.Tests/obj/Debug/net5.0/ToDoList.Tests.pdb
 /Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList.Tests/obj/Debug/net5.0/ToDoList.Tests.genruntimeconfig.cache
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.Views.dll
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.Views.pdb
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.deps.json
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.runtimeconfig.json
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.runtimeconfig.dev.json
