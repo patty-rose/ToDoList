@@ -14,7 +14,7 @@ namespace ToDoList.Controllers
     }
 
     [HttpGet("/items/new")] //names the url patth
-    public ActionResult CreateForm() //names the cshtml doc
+    public ActionResult New() //matches name of the cshtml doc
     {
       return View(); //CreateForm.cshtml does all the work of creating the form here.. this method simply tells our browser to grab it and display it.
     }
@@ -34,6 +34,13 @@ namespace ToDoList.Controllers
     {
       Item.ClearAll();
       return View();
+    }
+
+    [HttpGet("/items/{id}")]//curly brackets in route decorator is called Dynamic Routing-- it changes depending on user use. This particular dynamic route matches the method parameter VV id
+    public ActionResult Show(int id)
+    {
+      Item foundItem = Item.Find(id);
+      return View(foundItem);
     }
   }
 }
