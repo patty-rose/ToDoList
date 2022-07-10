@@ -26,5 +26,10 @@ namespace ToDoList.Models
     {
       _instances.Clear();
     }
+
+    public static Item Find(int searchId) //static because it needs to sift through ALL Items
+    {
+      return _instances[searchId-1];
+    }
   }
 }
