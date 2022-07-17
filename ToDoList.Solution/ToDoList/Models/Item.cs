@@ -7,7 +7,7 @@ namespace ToDoList.Models
   {
     // auto implemented properties
     public string Description { get; set; }
-    public int Id { get; } //called a readonly property if using get; but not set;
+    public int Id { get; set; } //UPDATED TO BE GET/SET -- called a readonly property if using get; but not set;
 
     // constructor
     public Item(string description)
@@ -25,7 +25,7 @@ namespace ToDoList.Models
         Id = id;
     }
 
-    public override bool Equals(System.Object otherItem)
+    public override bool Equals(System.Object otherItem)//Whenever we add a new property to our application, we should make sure that we update our Equals() method accordingly.
     {
       if (!(otherItem is Item))
       {
@@ -34,8 +34,9 @@ namespace ToDoList.Models
       else
       {
         Item newItem = (Item) otherItem;
+        bool idEquality = (this.Id == newItem.Id);
         bool descriptionEquality = (this.Description == newItem.Description);
-        return descriptionEquality;
+        return (idEquality && descriptionEquality);
       }
     }
 
@@ -101,7 +102,34 @@ namespace ToDoList.Models
 
     public void Save()
     {
-      
+      //1. open MySqlConnection
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+
+      //2. instantiate MySqlCommand to run
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+
+      //3.pass in an INSERT SQL command int cmd.CommandText
+      cmd.CommandText = "INSERT INTO items (description) VALUES (@ItemDescription);"; //@ItemDescription is a parameter placeholder-- this protects the info
+      MySqlParameter param = new MySqlParameter();
+      param.ParameterName = "@ItemDescription";
+      param.Value = this.Description;
+      cmd.Parameters.Add(param);//If we had more parameters to add, we would need to Add() each one.  
+      //We create a MySqlParameter object for each parameter required in our MySqlCommand. The ParameterName must match the parameter in the command string. The Value is what will replace the parameter in the command string when it is executed.
+      //what we're essentially doing here is using an object to say the @ItemDescription in our cmd.CommandText equals this.Description 
+
+      //4. non query command-- we are not retrieving data so call ENQ on our cmd obj 
+      cmd.ExecuteNonQuery();
+
+      //5. set the Item's Id property equal to the value of the id of the new row in our DB
+      Id = (int) cmd.LastInsertedId;//(int) explicitly converts LONG to int
+
+      //6. close the conn
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
     }
   }
 }
