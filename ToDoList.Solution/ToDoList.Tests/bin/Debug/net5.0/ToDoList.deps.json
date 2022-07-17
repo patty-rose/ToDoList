@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "ToDoList/1.0.0": {
         "dependencies": {
+          "MySqlConnector": "0.69.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -322,6 +323,17 @@
         },
         "compile": {
           "ToDoList.dll": {}
+        }
+      },
+      "MySqlConnector/0.69.0": {
+        "runtime": {
+          "lib/netcoreapp3.0/MySqlConnector.dll": {
+            "assemblyVersion": "0.69.0.0",
+            "fileVersion": "0.69.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/MySqlConnector.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -2029,6 +2041,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "MySqlConnector/0.69.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WcTKuczgGiCNqyNpBW3oTZnRzitIxKl/V7D2foKsUFsW+hcJgDSOT147KPLC25VO/Aaj8FXsozK+zDLsAsOv8g==",
+      "path": "mysqlconnector/0.69.0",
+      "hashPath": "mysqlconnector.0.69.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
       "type": "referenceassembly",

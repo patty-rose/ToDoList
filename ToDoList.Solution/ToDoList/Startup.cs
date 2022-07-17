@@ -27,6 +27,7 @@ namespace ToDoList
     {
       app.UseDeveloperExceptionPage();
       app.UseRouting();
+      app.UseStaticFiles(); //use static files like images and CSS
 
       app.UseEndpoints(routes =>
       {
@@ -38,5 +39,15 @@ namespace ToDoList
         await context.Response.WriteAsync("Something has gone wrong");
       });
     }
+  }
+
+  public static class DBConfiguration
+  {
+    public static string ConnectionString = "server=localhost;user id=root;password=epicodus;port=3306;database=to_do_list;";
+    //server-ids db server-- localhost cus it's on our machine, not online
+    //user id -ids db user
+    //password because our db doesn't hold sensitive info
+    //port iids the port MySql is running on-- default MySql server is 3306
+    //database= database name
   }
 }

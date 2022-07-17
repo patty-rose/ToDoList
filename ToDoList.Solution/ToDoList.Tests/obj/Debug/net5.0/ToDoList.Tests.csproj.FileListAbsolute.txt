@@ -103,3 +103,4 @@
 /Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.deps.json
 /Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.runtimeconfig.json
 /Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/ToDoList.runtimeconfig.dev.json
+/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList.Tests/bin/Debug/net5.0/MySqlConnector.dll
