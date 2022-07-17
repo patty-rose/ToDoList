@@ -115,5 +115,20 @@ namespace ToDoList.Tests
     //   //Assert
     //   Assert.AreEqual(newItem2, result);
     // }
+
+    [TestMethod]
+    public void Save_SavesToDatabase_ItemList()
+    {
+      //Arrange
+      Item testItem = new Item("Mow the lawn");
+
+      //Act
+      testItem.Save();
+      List<Item> result = Item.GetAll();
+      List<Item> testList = new List<Item>{testItem};
+
+      //Assert
+      CollectionAssert.AreEqual(testList, result);
+    }
   }
 }
