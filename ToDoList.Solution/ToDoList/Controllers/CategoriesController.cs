@@ -46,6 +46,7 @@ namespace ToDoList.Controllers
       Category foundCategory = Category.Find(categoryId);
 
       Item newItem = new Item(itemDescription);
+      newItem.Save();
 
       foundCategory.AddItem(newItem);
 

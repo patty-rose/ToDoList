@@ -94,10 +94,40 @@ namespace ToDoList.Models
       }
     }
 
-    public static Item Find(int searchId) //static because it needs to sift through ALL Items
+    public static Item Find(int id)
     {
-      Item placeholderItem = new Item("placeholder item");
-    return placeholderItem;
+      // 1. We open a connection.
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+
+      // 2. We create MySqlCommand object and add a query to its CommandText property. We always need to do this to make a SQL query.
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = "SELECT * FROM items WHERE id = @ThisId;";
+
+      // 3. We have to use parameter placeholders @ThisId and a `MySqlParameter` object to prevent SQL injection attacks. This is only necessary when we are passing parameters into a query. We also did this with our Save() method.
+      MySqlParameter param = new MySqlParameter();
+      param.ParameterName = "@ThisId";
+      param.Value = id;
+      cmd.Parameters.Add(param);
+
+      // 4. We use the ExecuteReader() method because our query will be returning results and we need this method to read these results. This is in contrast to the ExecuteNonQuery() method, which we use for SQL commands that don't return results like our Save() method.
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      int itemId = 0;
+      string itemDescription = "";
+      while (rdr.Read())
+      {
+        itemId = rdr.GetInt32(0);
+        itemDescription = rdr.GetString(1);
+      }
+      Item foundItem = new Item(itemDescription, itemId);//convert the found record into a C# object
+
+      // 5. We close the connection.
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return foundItem;
     }
 
     public void Save()

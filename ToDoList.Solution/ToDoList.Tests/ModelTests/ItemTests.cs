@@ -80,11 +80,6 @@ namespace ToDoList.Tests
 
       List<Item> result = Item.GetAll();
 
-      // foreach (Item thisItem in result)
-      // {
-      //   Console.WriteLine("Output from second GetAll test: " + thisItem.Description);
-      // }
-
       CollectionAssert.AreEqual(newList, result); 
     }
 
@@ -102,21 +97,21 @@ namespace ToDoList.Tests
     //   Assert.AreEqual(1, result);
     // }
 
-    // [TestMethod]
-    // public void Find_ReturnsCorrectItem_Item()
-    // {
-    //   //Arrange
-    //   string description01 = "Walk the dog";
-    //   string description02 = "Wash the dishes";
-    //   Item newItem1 = new Item(description01);
-    //   Item newItem2 = new Item(description02);
+    [TestMethod]
+    public void Find_ReturnsCorrectItemFromDatabase_Item()
+    {
+      //Arrange
+      Item newItem = new Item("Mow the lawn");
+      newItem.Save();
+      Item newItem2 = new Item("Wash dishes");
+      newItem2.Save();
 
-    //   //Act
-    //   Item result = Item.Find(2);
+      //Act
+      Item foundItem = Item.Find(newItem.Id);
 
-    //   //Assert
-    //   Assert.AreEqual(newItem2, result);
-    // }
+      //Assert
+      Assert.AreEqual(newItem, foundItem);
+    }
 
     [TestMethod]
     public void Save_SavesToDatabase_ItemList()
