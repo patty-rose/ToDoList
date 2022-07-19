@@ -107,7 +107,7 @@ namespace ToDoList.Tests
       newItem2.Save();
 
       //Act
-      Item foundItem = Item.Find(newItem.Id);
+      Item found  vv  v Item = Item.Find(newItem.Id);
 
       //Assert
       Assert.AreEqual(newItem, foundItem);
