@@ -2,39 +2,15 @@ using System.Collections.Generic;
 
 namespace ToDoList.Models
 {
-  public class Category
-  {
-    private static List<Category> _instances = new List<Category> {};
-    public string Name { get; set; }
-    public int Id { get; }
-    public List<Item> Items { get; set; }
-
-    public Category(string categoryName)
+    public class Category
     {
-      Name = categoryName;
-      _instances.Add(this);
-      Id = _instances.Count;
-      Items = new List<Item>{};
-    }
+        public Category()
+        {
+            this.Items = new HashSet<Item>();
+        }//HashSet is an unordered collection of unique elements. We use INSTEAD OF a list to avoid exceptions when no records exist yet. HashSet cannot have duplicates.
 
-    public static void ClearAll()
-    {
-      _instances.Clear();
+        public int CategoryId { get; set; }
+        public string Name { get; set; }
+        public virtual ICollection<Item> Items { get; set; }//Entity requires ICollection specifically. By declaring Items as an ICollection<Item> data type, we're ensuring Entity will be able to use all the ICollection methods it requires on the Item objects in order to act as our ORM and we wont have to manually interact with our database. Virtual allows Entity to use LazyLoading. 
     }
-
-    public static List<Category> GetAll()
-    {
-      return _instances;
-    }
-
-    public static Category Find(int searchId)
-    {
-      return _instances[searchId-1];
-    }
-
-    public void AddItem(Item item)
-    {
-      Items.Add(item);
-    }
-  }
 }
