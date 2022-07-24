@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;//to call UseMySql
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ToDoList.Models; //to call <ToDoListContext>
 
 namespace ToDoList
 {
@@ -12,15 +14,19 @@ namespace ToDoList
     {
       var builder = new ConfigurationBuilder()
           .SetBasePath(env.ContentRootPath)
-          .AddEnvironmentVariables();
+          .AddJsonFile("appsettings.json");//this line replaces .AddEnvironmentVariables();
       Configuration = builder.Build();
     }
 
-    public IConfigurationRoot Configuration { get; }
+    public IConfigurationRoot Configuration { get; set; }
 
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddMvc();
+
+      services.AddEntityFrameworkMySql()//adding a form of entity that understands MySQL - addDbContext is a representation of our DB that we are calling ToDoListContext in the carrots below- options set it to use our default connection 
+        .AddDbContext<ToDoListContext>(options => options
+        .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
     }
 
     public void Configure(IApplicationBuilder app)
@@ -41,13 +47,14 @@ namespace ToDoList
     }
   }
 
-  public static class DBConfiguration
-  {
-    public static string ConnectionString = "server=localhost;user id=root;password=epicodus;port=3306;database=to_do_list;";
-    //server-ids db server-- localhost cus it's on our machine, not online
-    //user id -ids db user
-    //password because our db doesn't hold sensitive info
-    //port iids the port MySql is running on-- default MySql server is 3306
-    //database= database name
-  }
+  //best-practice is to store connection string in appsettings.json due to Entity configuration
+  // public static class DBConfiguration
+  // {
+  //   public static string ConnectionString = "server=localhost;user id=root;password=epicodus;port=3306;database=to_do_list;";
+  //   //server-ids db server-- localhost cus it's on our machine, not online
+  //   //user id -ids db user
+  //   //password because our db doesn't hold sensitive info
+  //   //port iids the port MySql is running on-- default MySql server is 3306
+  //   //database= database name
+  // }
 }

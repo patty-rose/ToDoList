@@ -42,9 +42,9 @@
               "target": "Package",
               "version": "[5.0.0, )"
             },
-            "MySqlConnector": {
+            "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
-              "version": "[0.69.0, )"
+              "version": "[5.0.0, )"
             },
             "Pomelo.EntityFrameworkCore.Mysql": {
               "target": "Package",
