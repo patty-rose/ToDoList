@@ -2,6 +2,11 @@
   Layout = "_Layout";
 } 
 @* @{} is a razor code block. This particular code says we are using _Layout.cshtml as the layout file *@
+
 <h1>Welcome to the To Do List!</h1>
-<h3><a href='/categories'>View categories</a></h3>
-<h3><a href='/categories/new'>Add a new category</a></h3>
+<p>@Html.ActionLink("See all categories", "Index", "Categories")</p>
+<p>@Html.ActionLink("See all items", "Index", "Items")</p> 
+@* The ActionLink() method is called on @Html. It takes two required parameters as well as an optional third parameter.
+The first parameter "See all items" is the display text for the link. In other words, a user will see a link that says "See all items".
+The second parameter "Index" is the target action in the controller.
+The third parameter Items is optional, and it specifies the controller that we want to route to. More specifically, our third parameter is the name of the controller without Controller appended to it. Since we've included this third parameter, this ActionLink will take us to the Index() route method in the ItemsController. Otherwise it would match the view-- since we are in home it woudl take us to home controller*@
