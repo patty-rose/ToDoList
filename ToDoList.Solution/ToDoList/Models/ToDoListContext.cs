@@ -6,7 +6,9 @@ namespace ToDoList.Models
   {
     public DbSet<Category> Categories { get; set; }
     public DbSet<Item> Items { get; set; }//ToDoListContext contains a property of type DbSet named Items that represents the Items table in our ToDoList database and lets us interact with it. DbSet needs to know what C# object it’s going to represent, so we must include Item in the angle brackets (<>) after DbSet.
+    public DbSet<CategoryItem> CategoryItem { get; set; }
 
+    //Each DbSet we've included will become a table in our database with entity migration functionality
 
 
     public ToDoListContext(DbContextOptions options) : base(options) { }

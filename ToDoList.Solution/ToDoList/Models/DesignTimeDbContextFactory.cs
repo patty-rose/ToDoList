@@ -1,0 +1,27 @@
+//Design time vs Run time-- design time is when we are designing, before running. We run migrations during design time, not asynchronously during run time.This code is for our application to properly find our database context. add entity design package.
+
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
+using System.IO;
+
+namespace ToDoList.Models
+{
+  public class ToDoListContextFactory : IDesignTimeDbContextFactory<ToDoListContext>
+  {
+
+    ToDoListContext IDesignTimeDbContextFactory<ToDoListContext>.CreateDbContext(string[] args)
+    {
+      IConfigurationRoot configuration = new ConfigurationBuilder()
+          .SetBasePath(Directory.GetCurrentDirectory())
+          .AddJsonFile("appsettings.json")
+          .Build();
+
+      var builder = new DbContextOptionsBuilder<ToDoListContext>();
+
+      builder.UseMySql(configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(configuration["ConnectionStrings:DefaultConnection"]));
+
+      return new ToDoListContext(builder.Options);
+    }
+  }
+}
