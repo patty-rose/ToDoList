@@ -10,8 +10,8 @@
 {
   @Html.LabelFor(model => model.Description)
   @Html.TextBoxFor(model => model.Description)
-
-  @Html.LabelFor(model => model.Category)
+@* We've replaced our HTML LabelFor method with a simple Label method, since Item no longer has an explicitly defined Category property. *@
+  @Html.Label("Select category")
   @Html.DropDownList("CategoryId")
   @*give DropDownList() the string name of a ViewBag property of the type SelectList. Since we saved our SelectList as ViewBag.CategoryId, we give DropDownList() the string "CategoryId". This helper method will create an html dropdown select list out of the SelectList object.  *@
 

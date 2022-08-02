@@ -15,7 +15,7 @@
 <ul>
   @foreach(Item item in Model)
   {
-    <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId }) | @item.Category.Name</li>
+    <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId }) |</li>
     //p1 is link text-- so this is string interpolation--similar to template literal- $ denotes we will use {} for c# to evaluate an expression inside of a string. Here it is titling this link the description of the item ie: "walk the dog"
     //p2 is the target action (method name in the controller) "Details"
     //p3 passing a different kind of variable as an optional extra argument to ActionLink(). The ActionLink method can take an object containing the data that will be passed as arguments to the Action. SO we create a new one here: The code new { id = item.ItemId } creates an anonymous object with the property id from the Item object. This is how .NET knows which id to use in the Details() action. However, keep in mind that property names of the object we pass in must match parameter names used by the target method. In this case, it will need to match the parameter names in our Details() route method id, like this: Details(int id).
