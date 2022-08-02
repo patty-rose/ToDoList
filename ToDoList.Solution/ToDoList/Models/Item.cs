@@ -8,11 +8,13 @@ namespace ToDoList.Models
     public Item()
       {
           this.JoinEntities = new HashSet<CategoryItem>();
+          this.IsComplete = false;
       }
       
     // auto implemented properties
     public string Description { get; set; }
     public int ItemId { get; set; }
+    public bool IsComplete { get; set; }
     public virtual ICollection<CategoryItem> JoinEntities { get; } //note the reference navigation property only has a getter method while the collection navigation property has both. In this many to many we will only be modifying the relationship between an Item and a Category.
 
 

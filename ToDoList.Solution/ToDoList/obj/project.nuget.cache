@@ -1,13 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "21h+3gD4fWyvSU8v7AGf8BNEQR9m1+8q0t8STkUQLMpz0rLQoQtvlTqzwcW9gJMdrVAwgnV+VMUxUGTJefpe9A==",
+  "dgSpecHash": "Bi3MMetuunS9cMLmHhS6mYzNb8CimtPjuGEUZQanEvosW6MpUx3ZUDcSToXvsz2LNJHJv7GS+KsGLDV7BG+Y9g==",
   "success": true,
   "projectFilePath": "/Users/pattyrose/Desktop/c0ding/to-do/ToDoList.Solution/ToDoList/ToDoList.csproj",
   "expectedPackageFiles": [
     "/Users/pattyrose/.nuget/packages/castle.core/4.4.1/castle.core.4.4.1.nupkg.sha512",
+    "/Users/pattyrose/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/pattyrose/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/pattyrose/.nuget/packages/microsoft.entityframeworkcore/5.0.0/microsoft.entityframeworkcore.5.0.0.nupkg.sha512",
     "/Users/pattyrose/.nuget/packages/microsoft.entityframeworkcore.abstractions/5.0.0/microsoft.entityframeworkcore.abstractions.5.0.0.nupkg.sha512",
     "/Users/pattyrose/.nuget/packages/microsoft.entityframeworkcore.analyzers/5.0.0/microsoft.entityframeworkcore.analyzers.5.0.0.nupkg.sha512",
+    "/Users/pattyrose/.nuget/packages/microsoft.entityframeworkcore.design/5.0.0/microsoft.entityframeworkcore.design.5.0.0.nupkg.sha512",
     "/Users/pattyrose/.nuget/packages/microsoft.entityframeworkcore.proxies/5.0.0/microsoft.entityframeworkcore.proxies.5.0.0.nupkg.sha512",
     "/Users/pattyrose/.nuget/packages/microsoft.entityframeworkcore.relational/5.0.0/microsoft.entityframeworkcore.relational.5.0.0.nupkg.sha512",
     "/Users/pattyrose/.nuget/packages/microsoft.extensions.caching.abstractions/5.0.0/microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
