@@ -15,7 +15,7 @@
   @Html.DropDownList("CategoryId")
   @*give DropDownList() the string name of a ViewBag property of the type SelectList. Since we saved our SelectList as ViewBag.CategoryId, we give DropDownList() the string "CategoryId". This helper method will create an html dropdown select list out of the SelectList object.  *@
 
-  <input type="submit" value="Add new item" class="btn btn-default"/>
+  <input type="submit" value="Add new item"/>
 }
 <hr />
 <p>@Html.ActionLink("Show all items", "Index")</p>

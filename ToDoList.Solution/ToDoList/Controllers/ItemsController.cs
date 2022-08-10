@@ -22,12 +22,28 @@ namespace ToDoList.Controllers
       return View(_db.Items.ToList());
     }
 
+    [HttpPost, ActionName("Index")]
+    public ActionResult SaveIsComplete(Item item)
+    {
+      _db.Entry(item).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
     public ActionResult Create()
     {
-      ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");//Creating a ViewBag.Category ID property as a Select List object ensures we are creating new items within CAtegories that already exist.A SelectList will provide a list of the data needed to create an html <select> list of all the categories from our database. The displayed text of each <option> will be the Category's Name property, and the value of the <option> will be the Category's CategoryId.
-      //selectList arguments-- 1. the data that will populate <option> elements (list of categories from our DB) 2. the value of every <option> element (Category's CAtegoryId) 3. displayed text (name of CAtegory)
+      ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
       return View();
     }
+
+    //DEPRECATED CREATE POST
+    // [HttpPost]
+    // public ActionResult Create(Item item)
+    // {
+    //   _db.Items.Add(item);
+    //   _db.SaveChanges();
+    //   return RedirectToAction("Index");
+    // }
 
     [HttpPost]
     public ActionResult Create(Item item, int CategoryId)
